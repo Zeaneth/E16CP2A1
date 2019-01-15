@@ -108,3 +108,11 @@ FROM users
 INNER JOIN images ON (users.id = images.owner_id)
 ;
 """
+# Crear consulta para mostrar nombre de etiqueta y cantidad de imágenes con esa etiqueta
+"""
+SELECT tags.name, COUNT(*)
+FROM tags
+INNER JOIN images_tags ON (tags.id = images_tags.tag_id)
+GROUP BY tags.name
+;
+"""
